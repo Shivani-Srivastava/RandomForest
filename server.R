@@ -234,4 +234,34 @@ server <- function(input, output,session) {
     }
   )
   
+    output$downloadData <- downloadHandler(
+    filename = function() { "UniversalBank-prediction.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/UniversalBank-prediction sample.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  
+  
+    output$downloadData001 <- downloadHandler(
+    filename = function() { "UniversalBank.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/UniversalBank.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  
+  
+    output$downloadData002 <- downloadHandler(
+    filename = function() { "Beerdata-prediction.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/beer data - prediction sample.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  
+  
+    output$downloadData003 <- downloadHandler(
+    filename = function() { "beerdata.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/beer data.csv"), file, row.names=F, col.names=F)
+    }
+  )
 }
