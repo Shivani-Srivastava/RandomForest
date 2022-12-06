@@ -36,7 +36,20 @@ shinyUI(fluidPage(
     # value argument is important in the tabPanle()
     tabsetPanel(
       tabPanel("Overview & Example Dataset", value=1, 
-               includeMarkdown("overview.md")
+               includeMarkdown("overview.md"),
+               br(),
+               br(),
+               downloadButton('downloadData', 'Download Universal Bank prediction input file.'),
+               br(),
+               br(),
+               downloadButton('downloadData001', 'Download Universal Bank input file.'),
+               br(),
+               br(),
+               downloadButton('downloadData002', 'Download Beer Data prediction input file.'),
+               br(),
+               br(),
+               downloadButton('downloadData003', 'Download Beer Data input file.')
+               
       ),
       tabPanel("Data Summary", value=3,
                DT::dataTableOutput("samp"),
