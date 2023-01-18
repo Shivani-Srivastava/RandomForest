@@ -37,7 +37,8 @@ shinyUI(fluidPage(
     tabsetPanel(
       tabPanel("Overview & Example Dataset", value=1, 
                includeMarkdown("overview.md"),
-               br(),
+               br()),
+      tabPanel("Example Datasets", value = 1,               
                br(),
                downloadButton('downloadData', 'Download Universal Bank prediction input file.'),
                br(),
@@ -48,7 +49,34 @@ shinyUI(fluidPage(
                downloadButton('downloadData002', 'Download Beer Data prediction input file.'),
                br(),
                br(),
-               downloadButton('downloadData003', 'Download Beer Data input file.')
+               downloadButton('downloadData003', 'Download Beer Data input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataHR_Train', 'Download HR Analytics Training input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataHR_Predict', 'Download HR Analytics prediction input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataTelco_Train', 'Download Telecom Customer Data training input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataTelco_Predict', 'Download Telecom Customer Data prediction input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataTitanic_Train', 'Download Titanic Training input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataTitanic_Predict', 'Download Titanic prediction input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataHousing_Train', 'Download California Housing Training input file.'),
+               br(),
+               br(),
+               downloadButton('downloadDataHousing_Predict', 'Download California Housing prediction input file.'),
+               br(),
+               br()
+               
                
       ),
       tabPanel("Data Summary", value=3,
@@ -69,7 +97,7 @@ shinyUI(fluidPage(
                #h4("Confusion Matrix (Train Set)"),
                uiOutput("train_res"),
                
-               #plotOutput('conf_train_plot'),
+               #tableOutput('conf_train_plot'),
                #HTML('<button data-toggle="collapse" data-target="#demo">Detailed Result</button>'),
               # tags$div(id="demo",class="collapse",),
                verbatimTextOutput("conf_train"),
@@ -77,7 +105,7 @@ shinyUI(fluidPage(
                #h4("Confuison Matrix (Test Set)"),
               # HTML('<button data-toggle="collapse" data-target="#demo1">Detailed Result</button>'),
               uiOutput("test_res"),
-              #plotOutput('conf_test_plot'),
+              #tableOutput('conf_test_plot'),
               verbatimTextOutput("conf_test")
                #tags$div(id="demo1",class="collapse",)
                
