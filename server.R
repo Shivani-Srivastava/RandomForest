@@ -234,10 +234,59 @@ server <- function(input, output,session) {
     }
   )
   
-    output$downloadData <- downloadHandler(
+  output$downloadData <- downloadHandler(
     filename = function() { "UniversalBank-prediction.csv" },
     content = function(file) {
       write.csv(read.csv("data/UniversalBank-prediction sample.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataHR_Train <- downloadHandler(
+    filename = function() { "HR_analytics_train.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/HR_analytics_train.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataHR_Predict <- downloadHandler(
+    filename = function() { "HR_analytics_prediction.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/HR_analytics_prediction.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataTelco_Train <- downloadHandler(
+    filename = function() { "Telco_Customer_Churn_train.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/Telco_Customer_Churn_train.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataTelco_Predict <- downloadHandler(
+    filename = function() { "Telco_cust_churn_prediction.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/Telco_cust_churn_prediction.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataTitanic_Train <- downloadHandler(
+    filename = function() { "Titanic.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/Titanic.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataTitanic_Predict <- downloadHandler(
+    filename = function() { "titanic_prediction sample.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/titanic_prediction sample.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  output$downloadDataHousing_Train <- downloadHandler(
+    filename = function() { "califHousing_train.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/califHousing_train.csv"), file, row.names=F, col.names=F)
+    }
+  )
+  
+  output$downloadDataHousing_Predict <- downloadHandler(
+    filename = function() { "califHousing_prediction.csv" },
+    content = function(file) {
+      write.csv(read.csv("data/califHousing_prediction.csv"), file, row.names=F, col.names=F)
     }
   )
   
